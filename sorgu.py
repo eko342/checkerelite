@@ -77,7 +77,7 @@ def start(message):
     group_id = -1001933909870
 
     if not is_user_member(user_id, channel_id) or not is_user_member(user_id, group_id):
-        response = f"Merhaba {user_name}, ({user_id})!\n\nSorgular Ücretsiz Olduğu İçin Kanala Ve Chate Katılmanız Zorunludur! Kanal Ve Chate Katılıp Tekrar Deneyin."
+        response = f"Hoşgeldin {user_name}, ({user_id})!\n\nSorgular Ücretsiz Olduğu İçin Kanala Ve Chate Katılman Zorunlu. Katıldıktan Sonra Tekrar Dene, Ben Senin İçin Burdayım Kanka :D"
         markup = telebot.types.InlineKeyboardMarkup()
         markup.add(
             telebot.types.InlineKeyboardButton("📢 Duyuru", url="https://t.me/israilduyurular"),
@@ -87,9 +87,9 @@ def start(message):
         return
 
     if user_id not in user_start_counts:
-        user_start_counts[user_id] = 0
+        user_start_counts[user_id] = 1
 
-    user_start_counts[user_id] += 1
+    user_start_counts[user_id] += 0
 
     total_users = len(user_start_counts)
 
